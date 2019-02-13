@@ -1,0 +1,46 @@
+//ajouter un user
+mutation{
+  addPerson(firstName:"joel", lastName:"randi",email:"huguelouis@ecam.be"){
+    id
+  }
+}
+
+//ajouter une wishlist
+mutation{
+  addWishlist(idItem:77, nuItem:8,userId:3,idRecever:8){
+    idItem
+  }
+}
+
+--// delete wishlists by id
+mutation delWishlistById{
+    delWishlistById(id:3){
+      idItem
+    }
+}
+
+--// delete wishlists by userid
+
+mutation delWishlistByuserId{
+  delWishlistByuserid(personId:3){
+    idItem
+  }
+}
+--// update wishlists
+mutation{
+  updateWishlist(id:10, idItem:99,nuItem:9,userId:2,idRecever:7){
+    nuItem
+  }
+}
+--// query get wishlist by args
+query{
+  wishlists(idRecever:5){
+    idItem
+    nuItem
+    person{
+      firstName
+      lastName
+      email
+    }
+  }
+}
